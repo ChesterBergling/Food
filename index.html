@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API Search</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>API Search</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CuisineSphere</title>
 
-  <select name="area-select" id="area-select">
-    <option value="">Select Area</option>
-  </select>
+    <!-- Load main script early: it detects language/dir and injects Bootstrap CSS before custom styles -->
+    <script src="script.js"></script>
 
-  <div id="results"></div>
-  <script src="script.js"></script>
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CuisineSphere</h1>
+
+    <div class="controls">
+      <!-- Search bar -->
+      <div class="search-container">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search meals by name"
+        />
+        <button id="search-btn" type="button">Search</button>
+      </div>
+      <select name="area-select" id="area-select">
+        <option value="">Select Area</option>
+      </select>
+
+      <!-- New select for categories -->
+      <select name="category-select" id="category-select">
+        <option value="all">All Categories</option>
+      </select>
+
+      <!-- Button to view favorites -->
+      <button id="show-favorites-btn" type="button">Show Favorites</button>
+    </div>
+
+    <div id="results"></div>
+    <!-- Pagination controls -->
+    <div id="pagination" class="pagination">
+      <button id="prev-page" type="button">Prev</button>
+      <span id="page-info"></span>
+      <button id="next-page" type="button">Next</button>
+    </div>
+    <!-- Details for a single recipe will be rendered here -->
+    <div id="details"></div>
+    <!-- Bootstrap JS is injected by script.js -->
+  </body>
 </html>
